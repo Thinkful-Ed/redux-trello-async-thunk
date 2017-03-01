@@ -4,21 +4,14 @@ import {connect} from 'react-redux';
 import List from './list';
 import AddForm from './add-form';
 
-import {addList, fetchBoardSuccess} from '../actions';
+import {addList, fetchBoard} from '../actions';
 
 
 export class Board extends React.Component {
     constructor(props) {
         super(props);
 
-        fetch('/board').then(res => {
-            if (!res.ok) {
-                return;
-            }
-            return res.json();
-        }).then(board => {
-            this.props.dispatch(fetchBoardSuccess(board));
-        });
+        this.props.dispatch(fetchBoard());
     }
 
     addList(title) {

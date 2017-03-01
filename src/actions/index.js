@@ -16,3 +16,15 @@ export const fetchBoardSuccess = board => ({
     type: FETCH_BOARD_SUCCESS,
     board
 });
+
+export const fetchBoard = () => dispatch => {
+    fetch('/board').then(res => {
+        if (!res.ok) {
+            return;
+        }
+        return res.json();
+    }).then(board => {
+        dispatch(fetchBoardSuccess(board));
+    });
+};
+
