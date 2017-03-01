@@ -20,7 +20,7 @@ export const fetchBoardSuccess = board => ({
 export const fetchBoard = () => dispatch => {
     fetch('/board').then(res => {
         if (!res.ok) {
-            return;
+            return Promise.reject(res.statusText);
         }
         return res.json();
     }).then(board => {
