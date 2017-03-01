@@ -1,21 +1,7 @@
 import * as actions from '../actions';
 
 const initialState = {
-    lists: [{
-        title: 'Example list 1',
-        cards: [{
-            text: 'Example card 1'
-        }, {
-            text: 'Example card 2'
-        }]
-    }, {
-        title: 'Example list 2',
-        cards: [{
-            text: 'Example card 1'
-        }, {
-            text: 'Example card 2'
-        }]
-    }]
+    lists: []
 };
 
 export const trelloReducer = (state=initialState, action) => {
@@ -42,6 +28,9 @@ export const trelloReducer = (state=initialState, action) => {
         return Object.assign({}, state, {
             lists
         });
+    }
+    else if (action.type === actions.FETCH_BOARD_SUCCESS) {
+        return action.board;
     }
     return state;
 };

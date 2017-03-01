@@ -10,3 +10,9 @@ export const addCard = (text, listIndex) => ({
     text,
     listIndex
 });
+
+export const FETCH_BOARD_SUCCESS = 'FETCH_BOARD_SUCCESS';
+export const fetchBoardSuccess = board => ({
+    type: FETCH_BOARD_SUCCESS,
+    board
+});
