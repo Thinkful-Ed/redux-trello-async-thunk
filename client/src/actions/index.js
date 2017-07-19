@@ -1,3 +1,5 @@
+import {API_BASE_URL} from '../config';
+
 export const ADD_LIST = 'ADD_LIST';
 export const addList = title => ({
     type: ADD_LIST,
@@ -18,13 +20,14 @@ export const fetchBoardSuccess = board => ({
 });
 
 export const fetchBoard = () => dispatch => {
-    fetch('/board').then(res => {
-        if (!res.ok) {
-            return Promise.reject(res.statusText);
-        }
-        return res.json();
-    }).then(board => {
-        dispatch(fetchBoardSuccess(board));
-    });
+    fetch(`${API_BASE_URL}/board`)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json();
+        })
+        .then(board => {
+            dispatch(fetchBoardSuccess(board));
+        });
 };
-

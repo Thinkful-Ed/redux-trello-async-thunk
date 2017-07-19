@@ -8,19 +8,18 @@
     "react-scripts": "0.8.5"
   },
   "dependencies": {
-    "express": "^4.14.1",
-    "npm-run-all": "^4.0.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "run-p start:client start:server",
-    "start:server": "node server.js",
-    "start:client": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "main": "index.js",
+  "author": "Joe Turner <joe@oampo.co.uk>",
+  "license": "MIT"
 }
