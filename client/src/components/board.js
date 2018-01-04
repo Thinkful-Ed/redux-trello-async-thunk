@@ -26,7 +26,7 @@ export class Board extends React.Component {
 
         return (
             <div className="board">
-                <h2>Example board</h2>
+                <h2>{this.props.title}</h2>
                 <ul className="lists">
                     {lists}
                     <li className="add-list-wrapper">
